@@ -1,0 +1,42 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Ajouter vos destinations pour aujourd'hui : ) ! </h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label >Quelle est votre destination ? *</label>
+        <input type="text" class="form-control"  placeholder="Jemaa el-Fna, Marrakech" [(ngModel)]="participante.address" name="anyAdresse">
+      </div>
+      <div class="form-group">
+        <label> libeller votre position *</label>
+        <input type="text" class="form-control"  placeholder="ana HenA" maxlength="10" [(ngModel)]="participante.username" name="anyName">
+      </div>
+      <div class="form-row mb-4">
+        <div class="col">
+          <label>A partir de quelle heure ? *</label>
+          <input type="number"  class="form-control" placeholder="ex: 10h"  min="06" max="23" [(ngModel)]="participante.starthour" name="anyhour" >
+        </div>
+        <div class="col">
+          <label>jusqu'à quelle heure ? *</label>
+          <input type="number"  class="form-control" placeholder="ex:15h" min="06" max="23" [(ngModel)]="participante.endhour" name="anyTime">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div class="row justify-content-around">
+      <div class="col-4">
+        <button type="button" class="btn btn-outline-secondary" (click)="save()">Save</button>
+      </div>
+      <div class="col-4">
+        <button type="button" class="btn btn-outline-secondary" (click)="c('Close click')">Close</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<button class="btn-sm  btn-secondary" (click)="open(content)">Voulez-vous connaître le trafic avant de sortir</button>
