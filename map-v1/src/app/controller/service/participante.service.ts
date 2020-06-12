@@ -14,7 +14,6 @@ export class ParticipanteService {
   public save() {
      this.http.post<number>('http://localhost:5200/covidProjectApi/participants', this.participante).subscribe(
         data => {
-          console.log(this.participante);
           this.participante = null;
        },error => {
           console.log("error");
