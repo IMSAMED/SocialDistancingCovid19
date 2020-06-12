@@ -9,17 +9,19 @@ import { ChartsModule } from 'ng2-charts';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { AlertsModule } from 'angular-alert-module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MapComponent } from './map/map.component';
+import { MapComponent } from './component/map/map.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AccordionComponent } from './accordion/accordion.component';
-import { TabsComponent } from './tabs/tabs.component';
+import { AccordionComponent } from './component/accordion/accordion.component';
+import { TabsComponent } from './component/tabs/tabs.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ParticipationmodalComponent } from './participationmodal/participationmodal.component';
-import { StatisticComponent } from './statistic/statistic.component';
+import { ParticipationmodalComponent } from './component/participationmodal/participationmodal.component';
+import { StatisticComponent } from './component/statistic/statistic.component';
+import { MapdataComponent } from './component/mapdata/mapdata.component';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { StatisticComponent } from './statistic/statistic.component';
     TabsComponent,
     ParticipationmodalComponent,
     StatisticComponent,
+    MapdataComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { StatisticComponent } from './statistic/statistic.component';
     ChartsModule,
     GooglePlaceModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AlertsModule.forRoot(),
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
