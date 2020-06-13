@@ -8,8 +8,14 @@
   <div class="modal-body">
     <form >
       <div class="form-group">
-        <label >Quelle est votre destination ? *</label>
-        <input type="text" class="form-control"  placeholder="Jemaa el-Fna, Marrakech" [(ngModel)]="participante.address" name="anyAdresse" required >
+        <label> Quelle est votre destination ?*</label>
+          <input type="text" class="form-control"
+                 matInput
+                 matGoogleMapsAutocomplete
+                 [country]="ma"
+                 (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                 (onLocationSelected)="onLocationSelected($event)"
+                 placeholder="Jemaa el-Fna, Marrakech" [(ngModel)]="participante.address" name="anyAdresse" required>
       </div>
       <div class="form-group">
         <label> libeller votre position *</label>

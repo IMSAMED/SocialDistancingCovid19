@@ -3,6 +3,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {Participante} from "../../controller/model/participante.model";
 import {ParticipanteService} from "../../controller/service/participante.service";
 
+
 @Component({
   selector: 'app-participationmodal',
   templateUrl: './participationmodal.component.html',

@@ -10,6 +10,8 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { AlertsModule } from 'angular-alert-module';
+import { AgmCoreModule } from '@agm/core';
+import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +24,13 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ParticipationmodalComponent } from './component/participationmodal/participationmodal.component';
 import { StatisticComponent } from './component/statistic/statistic.component';
 import { MapdataComponent } from './component/mapdata/mapdata.component';
+import {environment} from '../environments/environment';
 
+const googleMapsParams = {
+   apiKey: environment.GOOGLE_MAPS_API_KEY,
+   libraries: ['places'],
+   language: 'fr',
+};
 
 @NgModule({
   declarations: [
@@ -49,6 +57,8 @@ import { MapdataComponent } from './component/mapdata/mapdata.component';
     HttpClientModule,
     FormsModule,
     AlertsModule.forRoot(),
+    AgmCoreModule.forRoot(googleMapsParams),
+    MatGoogleMapsAutocompleteModule,
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
